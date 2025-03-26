@@ -1,0 +1,22 @@
+.prompt-page {
+    height: 87vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--mainBg);
+}
+
+.prompt-container {
+    height: 60%;
+    width: 60%;
+    background-color: rgb(255, 255, 255, 0.7);
+    border-radius: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: 8rem;
+    box-sizing: border-box;
+
+}
