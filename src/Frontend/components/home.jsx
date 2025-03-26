@@ -1,7 +1,9 @@
 import '../style/home.css'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
-gsap.registerPlugin(useGSAP)
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+// gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(ScrollTrigger)
 const Home = () => {
     useGSAP(()=>{
         gsap.from('.detail-container',{
@@ -28,7 +30,27 @@ const Home = () => {
             scale:0,
             ease:'power3'
         })
-    })
+        gsap.from('.st-words',{
+            duration:1,
+            stagger:0.3,
+            yPercent:-100,
+            opacity:0,
+            ease:'power4.inOut',
+            scrollTrigger:{
+                trigger:'.second-container',
+                start:"top 20%",
+            }
+        })
+        gsap.from('.second-description',{
+            duration:1,
+            y:'-5rem',
+            opacity:0,
+            scrollTrigger:{
+                trigger:'.second-container',
+                start:"top 25%",
+            }
+        })
+    },[])
     return ( 
         <div className="home-container">
             <div className="initial-container">
@@ -40,7 +62,7 @@ const Home = () => {
             </div>
             <div className="second-container">
                 <div className="second-title">
-                    Discover the Magic Behind Slide Genie
+                    <span className='st-words' >Discover</span> <span className='st-words' >the</span> <span className='st-words' >Magic</span> <span className='st-words' >Behind</span> <span className='st-words' >Slide</span> <span className='st-words' >Genie</span>
                 </div>
                 <div className="second-description">
                 At Slide Genie, we believe in the power of seamless presentation creation. Our AI-powered platform allows users to transform their thoughts into captivating slides effortlessly. Join us on this journey of innovation and creativity.
