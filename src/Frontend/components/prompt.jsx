@@ -4,7 +4,7 @@ const PromptPage = () => {
         <div className="prompt-page">
             <div className="prompt-container">
                 <input type="text" placeholder="Enter the prompt" />
-                <input type="button" value="" />
+                <input type="button" value="Generate" />
             </div>
         </div>
      );

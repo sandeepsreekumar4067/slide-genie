@@ -2,6 +2,7 @@ import '../style/home.css'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import { useNavigate } from 'react-router-dom';
 // gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(ScrollTrigger)
 const Home = () => {
@@ -72,12 +73,13 @@ const Home = () => {
             }
         })
     },[])
+    const navigate = useNavigate()
     return ( 
         <div className="home-container">
             <div className="initial-container">
                 <div className="detail-container">
                     <div className="detail-title">Craft Stunning Presentations</div>
-                    <input type="button" value="Get Started" id='inpbtn'/>
+                    <input type="button" value="Get Started" id='inpbtn' onClick={()=>navigate('/prompt')} />
                     <div className="detail-description">Welcome to Slide Genie, where creating dynamic presentations is just a few clicks away. Let your ideas shine with our intuitive slide generation tool.</div>
                 </div>
             </div>
@@ -100,7 +102,7 @@ const Home = () => {
                     <div className='td-containers'>Support <span>Tailored Solutions</span></div>
                 </div>
                 <div className="get-started">
-                    <input type="button" value="Get Started" />
+                    <input type="button" value="Get Started" onClick={()=>navigate('/prompt')} />
                 </div>
             </div>
         </div>
