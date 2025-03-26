@@ -38,7 +38,7 @@ const Home = () => {
             ease:'power4.inOut',
             scrollTrigger:{
                 trigger:'.second-container',
-                start:"top 20%",
+                start:"top 60%",
             }
         })
         gsap.from('.second-description',{
@@ -47,7 +47,28 @@ const Home = () => {
             opacity:0,
             scrollTrigger:{
                 trigger:'.second-container',
-                start:"top 25%",
+                start:"top 55%",
+            }
+        })
+        gsap.from('.third-title',{
+            duration:1,
+            xPercent:-100,
+            opacity:0,
+            ease:'power4.inOut',
+            scrollTrigger:{
+                trigger:'.third-container',
+                start:"top 65%",
+            }
+        })
+        gsap.from('.td-containers',{
+            duration:1,
+            stagger:0.3,
+            yPercent:-100,
+            opacity:0,
+            ease:'power4.inOut',
+            scrollTrigger:{
+                trigger:'.third-description',
+                start:"top 60%",
             }
         })
     },[])
