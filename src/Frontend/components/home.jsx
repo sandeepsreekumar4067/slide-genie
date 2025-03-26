@@ -18,7 +18,15 @@ const Home = () => {
                 </div>
             </div>
             <div className="third-container">
-                
+                <div className="third-title">
+                    Our Offerings
+                </div>
+                <div className="third-description">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
      );
