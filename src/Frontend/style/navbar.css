@@ -1,0 +1,15 @@
+.navbar-container{
+    height: 6rem;
+    width: 100%;
+    background-color: var(--mainBg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    font: 1.2rem;
+}
+.navbar-container span:hover{
+    transition: 0.4s;
+    color: cornflowerblue;
+    cursor: pointer;
+}
