@@ -22,10 +22,13 @@ const Home = () => {
                     Our Offerings
                 </div>
                 <div className="third-description">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <div className='td-containers'>Customization <span>Tailored Solutions</span></div>
+                    <div className='td-containers'>Efficiency <span>Tailored Solutions</span></div>
+                    <div className='td-containers'>Creativity <span>Tailored Solutions</span></div>
+                    <div className='td-containers'>Support <span>Tailored Solutions</span></div>
+                </div>
+                <div className="get-started">
+                    <input type="button" value="Get Started" />
                 </div>
             </div>
         </div>
