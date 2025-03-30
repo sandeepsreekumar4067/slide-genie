@@ -34,11 +34,33 @@ const PromptPage = () => {
             }
         }).then((data)=>{
             localStorage.setItem('slide-info',JSON.stringify(data))
-            navigate('/slides')
+            fetchImageDir()
         }).catch((e)=>{
             console.log("error",e);
         })
     }
+
+    const fetchImageDir = ()=>{
+        fetch('http://127.0.0.1:5000/images',{
+            method:'GET',
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }).then((response)=>{
+            if(response.ok){
+                return response.json()
+            }else{
+                throw new Error(`Error status : ${response.status}`)
+            }
+        }).then((data)=>{
+            localStorage.setItem('image-info',JSON.stringify(data))
+            navigate('/slides')
+        }).catch((e)=>{
+            console.log("Error",e);
+            
+        })
+    }
+
     return ( 
         <div className="prompt-page">
             <div className="prompt-container">

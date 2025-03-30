@@ -102,6 +102,27 @@ def generate():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
+IMAGE_DIR="D:/python/slide generator/slide-genie/src/backend/generated_pictures"
+
+@app.route('/images', methods=['GET'])
+def get_generated_images():
+    """Returns a list of image filenames from the generated_pictures folder"""
+    try:
+        if not os.path.exists(IMAGE_DIR):
+            return jsonify({"images": []})  # If folder doesn't exist, return empty list
+
+        image_files = sorted(
+            [f for f in os.listdir(IMAGE_DIR) if f.endswith(".png")], 
+            key=lambda x: int(x.split("_")[1].split(".")[0])  # Sort by slide number
+        )
+
+        return jsonify({"images": image_files})  # Return list of image names
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500  # Return error if something goes wrong
+
+
 # Run the Flask app
 if __name__ == '__main__':
     app.run(debug=True)
