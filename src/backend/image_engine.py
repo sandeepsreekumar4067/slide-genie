@@ -24,9 +24,9 @@ output_folder = "generated_pictures"
 os.makedirs(output_folder, exist_ok=True)
 
 # Generate Slide JSON using content_generation
-def generate_slide_json(title):
+def generate_slide_json(title,number):
     try:
-        slide_json = content_generation(title)
+        slide_json = content_generation(input=title,number=number)
         print("Slide JSON generated successfully.")
         return slide_json
     except Exception as e:
@@ -70,11 +70,12 @@ def generate():
     try:
         data = request.json
         title = data.get("title")
+        number = data.get("number")
 
         if not title:
             return jsonify({"error": "Title is required"}), 400
 
-        slide_json = generate_slide_json(title)
+        slide_json = generate_slide_json(title=title,number=number)
         if not slide_json:
             return jsonify({"error": "Failed to generate slides"}), 500
 

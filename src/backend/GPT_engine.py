@@ -11,7 +11,7 @@ GEMINI_API=os.getenv("GEMINI_API")
 client = genai.Client(api_key=GEMINI_API)
 
 
-def content_generation(input):
+def content_generation(input,number):
     prompt = f""" Imagine you are an AI Slides generating tool called 'SlidesGenie'. Based on the input of the user, create the structure of the slides presentation as a JSON object.
     You have 4 slide formats at your disposal to use. Each slide has a type_id and takes different inputs. Slides with images have a special input called image_prompt. This should be a description of an image that can be generated using a text-to-image model. The description should match with the contents of the slide. The slide formats are:
     1. Title Slide
@@ -67,7 +67,7 @@ def content_generation(input):
         }}
       ]
     }}
-    The above JSON contains a list of the 4 slide templates: title, left-image-text, right-image-text, and title-sub-text. Use this to create 10 slides. For each slide, pick an appropriate slide template from the 4 templates given in the JSON and generate the response. Be creative and factual with the content. Comply with the user's input. 
+    The above JSON contains a list of the 4 slide templates: title, left-image-text, right-image-text, and title-sub-text. Use this to create {number} slides. For each slide, pick an appropriate slide template from the 4 templates given in the JSON and generate the response. Be creative and factual with the content. Comply with the user's input. 
     RESPOND WITH JSON ONLY
     This is the subject you have to make slides based on the prompt: {input}
     """

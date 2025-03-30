@@ -5,7 +5,7 @@ import PromptPage from "./src/Frontend/components/prompt";
 const App = () => {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/prompt" element={<PromptPage/>} />

@@ -174,3 +174,13 @@
     border-radius: 0px;
     scale: 1;
 }
+
+@media screen and (max-width:300px) {
+    .initial-container{
+
+    }
+    .detail-container{display: none}
+    .second-container{display: none;}
+    .third-container{display: none;}
+
+}
