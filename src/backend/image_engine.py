@@ -7,7 +7,7 @@ from io import BytesIO
 import os
 from dotenv import load_dotenv
 from GPT_engine import content_generation
-
+import shutil
 # Initialize Flask app
 app = Flask(__name__)
 
@@ -20,8 +20,17 @@ GEMINI_API = os.getenv("GEMINI_API")
 client = genai.Client(api_key=GEMINI_API)
 
 # Ensure output directory exists
-output_folder = "generated_pictures"
+output_folder = "D:/python/slide generator/slide-genie/src/backend/generated_pictures"
 os.makedirs(output_folder, exist_ok=True)
+
+def clear_folder(folder_path):
+    for item in os.listdir(folder_path):  # List all items in the folder
+        item_path = os.path.join(folder_path, item)
+        if os.path.isfile(item_path) or os.path.islink(item_path):  # Check if it's a file or symlink
+            os.unlink(item_path)  # Remove file or symlink
+        elif os.path.isdir(item_path):  # Check if it's a directory
+            shutil.rmtree(item_path)  # Delete the directory and its contents
+
 
 # Generate Slide JSON using content_generation
 def generate_slide_json(title,number):
@@ -74,11 +83,10 @@ def generate():
 
         if not title:
             return jsonify({"error": "Title is required"}), 400
-
+        clear_folder("D:/python/slide generator/slide-genie/src/backend/generated_pictures")
         slide_json = generate_slide_json(title=title,number=number)
         if not slide_json:
             return jsonify({"error": "Failed to generate slides"}), 500
-
         # Extract prompts and generate images
         prompts = extract_image_prompts(slide_json)
         if not prompts:
