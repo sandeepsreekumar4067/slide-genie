@@ -6,7 +6,7 @@ import Slides from "./src/Frontend/components/slides";
 const App = () => {
   return (
     <>
-      {/* <NavBar /> */}
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/prompt" element={<PromptPage/>} />

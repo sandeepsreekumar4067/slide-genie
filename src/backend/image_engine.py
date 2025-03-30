@@ -11,6 +11,8 @@ import shutil
 # Initialize Flask app
 app = Flask(__name__)
 
+print("Image engine")
+
 # Enable CORS for all routes
 CORS(app, resources={r"/*": {"origins": "*"}})
 
@@ -94,7 +96,7 @@ def generate():
 
         for index, prompt in prompts:
             generate_and_save_image(prompt, index)
-
+        print(slide_json)
         return jsonify({"message": "Slides and images generated successfully!","slide_json":slide_json})
 
     except Exception as e:
