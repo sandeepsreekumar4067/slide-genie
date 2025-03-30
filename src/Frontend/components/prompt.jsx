@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import '../style/promptpage.css'
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const PromptPage = () => {
+    const navigate = useNavigate()
     const [prompt,setPrompt] = useState('')
     const [slide,setSlide] = useState(0)
     const updatePrompt = (event)=>{
@@ -31,7 +33,8 @@ const PromptPage = () => {
                 throw new Error(`error status : ${response.status}`)
             }
         }).then((data)=>{
-            console.log("success : ",data);
+            localStorage.setItem('slide-info',JSON.stringify(data))
+            navigate('/slides')
         }).catch((e)=>{
             console.log("error",e);
         })
