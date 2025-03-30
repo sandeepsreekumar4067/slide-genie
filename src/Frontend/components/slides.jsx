@@ -3,13 +3,23 @@ import '../style/slides.css'
 const Slides = () => {
     // const [slides,setSlides] = useState({})
     useEffect(()=>{
-        const slideDetails = JSON.parse(localStorage.getItem('slide-info'))
-        console.log(slideDetails);
         
     })
     return ( 
         <div className="slide-container">
-            hello
+            <div className="palette-container">
+
+            </div>
+            <div className="slide-viewer">
+                <div className="slide-renders"></div>
+                <div className="slide-renders"></div>
+
+                <div className="slide-renders"></div>
+
+                <div className="slide-renders"></div>
+
+
+            </div>
         </div>
      );
 }
