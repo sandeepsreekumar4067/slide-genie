@@ -1,4 +1,4 @@
-.slide-container{
+.slide-container {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -8,15 +8,26 @@
     overflow: hidden;
     box-sizing: border-box;
 }
-.palette-container{
+
+.palette-container {
     width: 25%;
-    height: 60%;
-    background-color: black;
+    min-height: 60%;
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
 }
-.slide-viewer{
+
+.slide-viewer {
     width: 75%;
-    height: 100vh; /* Takes full viewport height */
-    overflow-y: auto; /* Enables scrolling inside */
+    height: 100vh;
+    /* Takes full viewport height */
+    overflow-y: auto;
+    /* Enables scrolling inside */
     display: flex;
     align-items: center;
     justify-content: start;
@@ -25,6 +36,7 @@
     gap: 1rem;
     box-sizing: border-box;
 }
+
 /* .slide-renders{
     height: 31.5rem;
     width: 55rem;
@@ -37,17 +49,17 @@
 } */
 
 
-
+/* 
 .slide-renders {
-    height: 31.5rem; /* Fixed height for consistency */
-    width: 90%; /* Responsive width instead of fixed 55rem */
-    max-width: 55rem; /* Ensures it doesn't get too wide on large screens */
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* Soft gradient background */
+    height: 31.5rem; 
+    width: 90%; 
+    max-width: 55rem; 
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); 
     box-sizing: border-box;
-    padding: 1.5rem; /* More padding for content spacing */
+    padding: 1.5rem; 
     border-radius: 20px;
     cursor: pointer;
-    border: solid 1px rgba(0, 0, 0, 0.2); /* Lighter border for a modern look */
+    border: solid 1px rgba(0, 0, 0, 0.2); 
     flex-shrink: 0;
     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
     display: flex;
@@ -55,12 +67,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #333; /* Darker text for readability */
+    color: #333;
     font-family: 'Arial', sans-serif;
     gap: 0.5rem;
     font-weight: 500;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+} */
 
 .slide-image {
     max-width: 100%;
@@ -69,6 +81,272 @@
     object-fit: contain;
     border-radius: 10px;
 }
+
+.template-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.4s;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.template-button:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown container */
+.templates-dropdown {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: center;
+}
+
+/* Individual template boxes */
+.template-box {
+    width: 90%;
+    padding: 1rem;
+    background: #f0f0f0;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.template-box:hover {
+    background: #ddd;
+}
+
+/* default style  */
+
+.template-1-renders {
+    height: 31.5rem;
+    width: 55rem;
+    background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.template-1-renders h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.template-1-renders h3 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+.template-1-image {
+    width: 100%;
+    height: auto;
+    max-height: 20rem;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #00adb5;
+}
+
+
+
+/* papper style minimalistic */
+.template-2-renders {
+    height: 31.5rem;
+    width: 55rem;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.template-2-renders h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.template-2-renders p {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.template-2-image {
+    width: 100%;
+    height: auto;
+    max-height: 20rem;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #00adb5;
+}
+
+
+/* left image right text layout  */
+
+.template-3-renders {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    align-items: center;
+    height: 31.5rem;
+    width: 55rem;
+    background: white;
+    padding: 1.5rem;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.template-3-image {
+    width: 100%;
+    height: auto;
+    max-height: 15rem;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+/* right image left text  */
+
+
+.template-4-renders {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    background: white;
+    height: 31.5rem;
+    width: 55rem;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.template-4-image {
+    width: 100%;
+    height: auto;
+    max-height: 15rem;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+/* template 3 with skin color  */
+
+.template-5-renders {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    height: 31.5rem;
+    width: 55rem;
+    flex-shrink: 0;
+    background: #ffeedd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.template-5-image {
+    width: 100%;
+    height: auto;
+    max-height: 15rem;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.slide-content {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+    color: #663300;
+}
+
+
+
+
+/* black backgroud look really good  */
+
+
+.template-6-renders {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    background: #222831;
+    height: 31.5rem;
+    width: 55rem;
+    flex-shrink: 0;
+    color: #eeeeee;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.template-6-image {
+    width: 100%;
+    height: auto;
+    max-height: 15rem;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+
+
+/* template 4 */
+
+ .template-7-renders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    background: #d8e3e7;
+    height: 31.5rem;
+ width: 55rem;
+ flex-shrink: 0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.template-7-content {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+    color: #05386b;
+}
+
+.template-7-image {
+    width: 100%;
+    height: auto;
+    max-height: 15rem;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #379683;
+}
+
+
+
+
+
 
 /* Hover effect for better UI experience */
 .slide-renders:hover {
